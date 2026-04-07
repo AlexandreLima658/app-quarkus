@@ -1,11 +1,11 @@
-package org.com.br.controller;
+package org.com.br.controller.user;
 
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.com.br.entity.UserEntity;
-import org.com.br.service.UserService;
+import org.com.br.entity.user.UserEntity;
+import org.com.br.service.user.UserService;
 
 import java.util.UUID;
 

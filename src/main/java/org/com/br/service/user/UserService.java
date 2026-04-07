@@ -1,8 +1,7 @@
-package org.com.br.service;
+package org.com.br.service.user;
 
-import io.vertx.ext.auth.User;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.com.br.entity.UserEntity;
+import org.com.br.entity.user.UserEntity;
 import org.com.br.exception.UserNotFoundException;
 
 import java.util.List;
