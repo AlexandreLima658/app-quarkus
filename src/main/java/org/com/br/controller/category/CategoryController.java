@@ -7,6 +7,8 @@ import jakarta.ws.rs.core.Response;
 import org.com.br.entity.category.CategoryEntity;
 import org.com.br.service.category.CategoryService;
 
+import java.util.UUID;
+
 @Path("/categories")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -31,5 +33,11 @@ public class CategoryController {
     ) {
         final var categories = service.findAll(page, pageSize);
         return Response.ok(categories).build();
+    }
+
+    @GET
+    @Path("/{id}")
+    public Response getById(@PathParam("id") UUID categoryId){
+        return Response.ok(this.service.findById(categoryId)).build();
     }
 }
