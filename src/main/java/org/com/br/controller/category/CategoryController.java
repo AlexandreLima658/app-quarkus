@@ -40,4 +40,17 @@ public class CategoryController {
     public Response getById(@PathParam("id") UUID categoryId){
         return Response.ok(this.service.findById(categoryId)).build();
     }
+
+    @PUT
+    @Path("/{id}")
+    @Transactional
+    public Response updateCategory(
+            @PathParam("id") UUID categoryId,
+            final CategoryEntity category
+    ){
+        return Response.ok(this.service.update(categoryId, category)).build();
+    }
+
+
+
 }
