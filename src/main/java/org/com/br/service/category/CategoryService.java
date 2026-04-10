@@ -37,4 +37,9 @@ public class CategoryService {
         return category;
 
     }
+
+    public void delete(final UUID categoryId){
+        final var category = findById(categoryId);
+        CategoryEntity.deleteById(category.categoryId);
+    }
 }

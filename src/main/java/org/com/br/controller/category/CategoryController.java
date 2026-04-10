@@ -51,6 +51,14 @@ public class CategoryController {
         return Response.ok(this.service.update(categoryId, category)).build();
     }
 
+    @DELETE
+    @Path("/{id}")
+    @Transactional
+    public Response deleteCategory(@PathParam("id") UUID categoryId) {
+        this.service.delete(categoryId);
+        return Response.noContent().build();
+    }
+
 
 
 }

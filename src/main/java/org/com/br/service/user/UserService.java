@@ -2,10 +2,8 @@ package org.com.br.service.user;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.com.br.entity.user.UserEntity;
-import org.com.br.exception.DomainException;
 import org.com.br.exception.NotFoundException;
 
-import java.io.NotActiveException;
 import java.util.List;
 import java.util.UUID;
 
