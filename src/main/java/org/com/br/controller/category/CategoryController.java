@@ -1,6 +1,7 @@
 package org.com.br.controller.category;
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -22,7 +23,7 @@ public class CategoryController {
 
     @POST
     @Transactional
-    public Response createCategory(final CategoryEntity category){
+    public Response createCategory(@Valid final CategoryEntity category){
         return Response.ok(this.service.create(category)).build();
     }
 
@@ -58,7 +59,5 @@ public class CategoryController {
         this.service.delete(categoryId);
         return Response.noContent().build();
     }
-
-
 
 }
