@@ -1,9 +1,8 @@
-package org.com.br.service;
+package org.com.br.service.user;
 
-import io.vertx.ext.auth.User;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.com.br.entity.UserEntity;
-import org.com.br.exception.UserNotFoundException;
+import org.com.br.entity.user.UserEntity;
+import org.com.br.exception.NotFoundException;
 
 import java.util.List;
 import java.util.UUID;
@@ -23,8 +22,8 @@ public class UserService {
     }
 
     public UserEntity findById(final UUID userId) {
-         return UserEntity.<UserEntity>findByIdOptional(userId)
-                 .orElseThrow(UserNotFoundException::new);
+         return (UserEntity) UserEntity.findByIdOptional(userId)
+                 .orElseThrow(() -> NotFoundException.with(UserEntity.class, userId));
     }
 
     public UserEntity update(final UUID userId, final UserEntity userEntity){
