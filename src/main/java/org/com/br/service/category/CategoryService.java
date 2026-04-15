@@ -42,4 +42,8 @@ public class CategoryService {
         final var category = findById(categoryId);
         CategoryEntity.deleteById(category.categoryId);
     }
+
+    public long count(){
+        return CategoryEntity.count();
+    }
 }

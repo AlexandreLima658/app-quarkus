@@ -60,4 +60,12 @@ public class CategoryController {
         return Response.noContent().build();
     }
 
+    @GET
+    @Path("/count")
+    public Response getCount() {
+        final var total = service.count();
+        return Response.ok(total).build();
+    }
+
+
 }
